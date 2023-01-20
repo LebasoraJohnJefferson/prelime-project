@@ -1,0 +1,25 @@
+#quiz{
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+#data_entry{
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+input[type=text]:focus{
+    background-color: cyan;
+    width: 100%;
+      /*padding: 12px 10px;
+    margin: 8px 0;*/
+    display: inline-block;
+    border: 1px solid red;
+    /*border-radius: 2px;*/
+    box-sizing: border-box;
+    /* text-rendering:  */
+}

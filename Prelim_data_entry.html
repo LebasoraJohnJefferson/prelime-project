@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prelim Grade</title>
+	<script type="text/javascript">
+//=============================================== LECTURE
+		function prelim_quiz(){
+			var Prelim_Q = 0;
+			q1 = prelim_entry.q1.value;
+			q2 = prelim_entry.q2.value;
+			q3 = prelim_entry.q3.value;
+
+			Prelim_Q = (parseFloat(q1) + parseFloat(q2) + parseFloat(q3)) / 3;
+			
+			if (isNaN(Prelim_Q)){
+				prelim_form.Pquiz.value = "Invalid Entries";}
+			else if((q1 < 0 || q1 > 100) || (q2 < 0 || q2 > 100) || (q3 < 0 || q3 > 100)){
+				prelim_form.Pquiz.value = "Invalid Entries";
+			}
+			else{
+				prelim_form.Pquiz.value = Prelim_Q.toFixed(2);}
+		}
+
+		function prelim_cs(){
+			var z = 0;
+			z = parseFloat(prelim_entry.Ps.value);
+			if (isNaN(z)){
+				prelim_form.Pcs.value = "Invalid Entry";}
+			else if(z < 0 || z > 100){
+				prelim_form.Pcs.value = "Invalid Entry";}
+			else{
+				prelim_form.Pcs.value = z.toFixed(2);}
+		}
+
+		function prelim_il(){
+			var z = 0;
+			z = parseFloat(prelim_entry.Pil.value);
+			if (isNaN(z)){
+				prelim_form.Pil.value = "Invalid Entry";}
+			else if(z < 0 || z > 100){
+				prelim_form.Pcs.value = "Invalid Entry";}
+			else{
+				prelim_form.Pil.value = z.toFixed(2);}	
+		}
+
+		function prelim_we(score,items){
+		var res = 0;
+		if (parseFloat(score) > parseFloat(items)){
+			prelim_form.Plecme.value = "Invalid Entry";}
+		else{
+			a = prelim_form.Pquiz.value;
+			b = prelim_form.Pcs.value;
+			c = prelim_form.Pil.value;
+			d = 0;
+			f = prelim_form.PLAB_G.value;
+			res = parseFloat(score/items) * 100;
+			prelim_form.Plecme.value = res.toFixed(2);}
+			d = (a * .3) + (b * .1) + (c * .1) + (res * .5);
+			prelim_form.PLEC_G.value = d.toFixed(2);
+			prelim_form.PRELIM_G.value = (d * .4) + (f * .6);
+		}
+//=============================================== LECTURE
+//=============================================== LABORATORY
+		function prelim_LAB_quiz(){
+			var Prelim_mQ = 0;
+			m1 = prelim_entry.m1.value;
+			m2 = prelim_entry.m2.value;
+			m3 = prelim_entry.m3.value;
+
+			Prelim_mQ = (parseFloat(m1) + parseFloat(m2) + parseFloat(m3)) / 3;
+			
+			if (isNaN(Prelim_mQ)){
+				prelim_form.Plabquiz.value = "Invalid Entries";}
+			else if((m1 < 0 || m1 > 100) || (m2 < 0 || m2 > 100) || (m3 < 0 || m3 > 100)){
+				prelim_form.Plabquiz.value = "Invalid Entries";
+			}
+			else{
+				prelim_form.Plabquiz.value = Prelim_mQ.toFixed(2);}
+		}
+
+		function prelim_lab_cs(){
+			var z = 0;
+			z = parseFloat(prelim_entry.Plabcs.value);
+			if (isNaN(z)){
+				prelim_form.Plabcsz.value = "Invalid Entry";}
+			else if(z < 0 || z > 100){
+				prelim_form.Plabcsz.value = "Invalid Entry";}
+			else{
+				prelim_form.Plabcsz.value = z.toFixed(2);}
+		}
+
+
+//=============================================== LABORATORY
+		function passvalue(){
+			//document.getElementById("usn").innerHTML = studinfo.stud_usn.value;
+			//document.getElementById("last").innerHTML = studinfo.stud_last.value;
+			//document.getElementById("first").innerHTML = studinfo.stud_first.value;
+			//document.getElementById("mid").innerHTML = studinfo.stud_mid.value;
+			pre_usn.value = studinfo.stud_usn.value;
+			pre_last.value = studinfo.stud_last.value;
+			pre_first.value = studinfo.stud_first.value;
+			pre_mid.value = studinfo.stud_mid.value;
+			mid_usn.value = studinfo.stud_usn.value;
+			mid_last.value = studinfo.stud_last.value;
+			mid_first.value = studinfo.stud_first.value;
+			mid_mid.value = studinfo.stud_mid.value;
+			pref_usn.value = studinfo.stud_usn.value;
+			pref_last.value = studinfo.stud_last.value;
+			pref_first.value = studinfo.stud_first.value;
+			pref_mid.value = studinfo.stud_mid.value;
+			fin_usn.value = studinfo.stud_usn.value;
+			fin_last.value = studinfo.stud_last.value;
+			fin_first.value = studinfo.stud_first.value;
+			fin_mid.value = studinfo.stud_mid.value;
+		}
+	</script>
+	<style type="text/css">
+		#stud{
+			margin-top: 15%;
+			margin-left: 20%;
+			margin-right: 20%;
+			border: 1px solid black;
+			padding: 30px;
+			border-radius: 10px;
+		}
+		#quiz{
+			margin-left: 12%;
+			margin-right: 12%;
+			border: 1px solid black;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		#data_entry{
+			margin-left: 23%;
+			margin-right: 23%;
+			border: 1px solid black;
+			padding: 10px;
+			border-radius: 10px;
+		}
+
+		input[type=text]:focus{
+			background-color: cyan;
+			width: 85%;
+  			padding: 5px 5px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid cyan;
+			border-radius: 4px;
+			box-sizing: border-box;
+			font-weight: bold;
+			font-size: 15px;
+		}
+
+		nav{
+			background-color: cyan;
+			padding: 5px;
+		}
+
+		p{
+			font-family: Arial;
+			font-size: 28px;
+			padding: 0;
+			text-align: center;
+		}
+
+		p.info{
+			font-family: arial;
+			font-size: 20px;
+		}
+
+		a:hover{
+			color:red;
+			font-weight: bold;
+		}
+
+		a{
+			text-decoration: none;
+			font-family: arial;
+		}
+
+		/*.button {
+		  display: inline-block;
+		  border-radius: 4px;
+		  background-color: #f4511e;
+		  border: none;
+		  color: #FFFFFF;
+		  text-align: center;
+		  font-size: 28px;
+		  padding: 20px;
+		  width: 200px;
+		  transition: all 0.5s;
+		  cursor: pointer;
+		  margin: 5px;
+		}
+
+		.button span {
+		  cursor: pointer;
+		  display: inline-block;
+		  position: relative;
+		  transition: 0.5s;
+		}
+
+		.button span:after {
+		  content: '\00bb';
+		  position: absolute;
+		  opacity: 0;
+		  top: 0;
+		  right: -20px;
+		  transition: 0.5s;
+		}
+
+		.button:hover span {
+		  padding-right: 25px;
+		}
+
+		.button:hover span:after {
+		  opacity: 1;
+		  right: 0;
+		}*/
+
+	</style>
+</head>
+<!--scroll="no" style="overflow: hidden; font-family: arial"-->
+<body scroll="no" style="overflow: hidden; font-family: arial">
+	<div id="stud">
+		<form name="studinfo" method="post">
+		
+		<table align="center">
+			<th colspan="4"><h1 align="left">Student Information</h1></th>
+			<tr>
+				<td>USN</td>
+				<td>Lastname</td>
+				<td>Firstname</td>
+				<td>Middlename</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="stud_usn"></td>
+				<td><input type="text" name="stud_last"></td>
+				<td><input type="text" name="stud_first"></td>
+				<td><input type="text" name="stud_mid"></td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td align="right">
+					<input type="reset" value="Reset" value="Re-type">
+					<a href="#prelim"><span><input type="button" onclick="passvalue()" value="Proceed"></span></a>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<a name="prelim"></a>
+	<p><a href="" style="text-decoration: none">PRELIM PERIOD</a></p>
+
+	<table align="center">
+		<tr>
+			<td>USN</td>
+			<td>Lastname</td>
+			<td>Firstname</td>
+			<td>Middlename</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="pre_usn" disabled></td>
+			<td><input type="text" id="pre_last" disabled></td>
+			<td><input type="text" id="pre_first" disabled></td>
+			<td><input type="text" id="pre_mid" disabled></td>
+		</tr>
+	</table>
+
+	<nav align="center"><a href="#midterm">MIDTERM</a> | <a href="#prefinal">PREFINAL</a> | <a href="#final">FINAL</a> | <a href="">SEM GRADE</a></nav><br>
+	<div id="data_entry">
+	<form name="prelim_entry" method="post">
+		<table align="center">
+			<tr>
+				<th colspan="4" style="background-color: cyan">LECTURE</th>
+			</tr>
+			<tr>
+				<td>Quiz Grade</td>
+				<td><input type="text" name="q1" onblur="prelim_quiz()"></td>
+				<td><input type="text" name="q2" onblur="prelim_quiz()"></td>
+				<td><input type="text" name="q3" onblur="prelim_quiz()"></td>
+			</tr>
+			<tr>
+				<td>Class Standing</td>
+				<td><input type="text" name="Ps" onblur="prelim_cs()"></td>
+				<td>Independent Learning</td>
+				<td><input type="text" name="Pil" onblur="prelim_il()"></td>				
+			</tr>
+			<tr>
+				<td colspan="4" align="center"><b>Written Exam</b></td>
+			</tr>
+			<tr>
+				<td>Items</td>
+				<td><input type="text" name="we_items" onblur="prelim_we(prelim_entry.we_score.value, prelim_entry.we_items.value)"></td>
+				<td>Score</td>
+				<td><input type="text" name="we_score" onblur="prelim_we(prelim_entry.we_score.value, prelim_entry.we_items.value)"></td>
+			</tr>
+			<tr>
+				<th colspan="4" style="background-color: cyan">LABORATORY</th>
+			</tr>
+			<tr>
+				<td>Machine Problem</td>
+				<td><input type="text" name="m1" onblur="prelim_LAB_quiz()"></td>
+				<td><input type="text" name="m2" onblur="prelim_LAB_quiz()"></td>
+				<td><input type="text" name="m3" onblur="prelim_LAB_quiz()"></td>
+			</tr>
+			<tr>
+				<td>Class Standing</td>
+				<td><input type="text" name="Plabcs" onblur="prelim_lab_cs()"></td>
+				<td colspan="2">&nbsp</td>			
+			</tr>
+			<tr>
+				<td colspan="4" align="center"><b>Practical Exam</b></td>
+			</tr>
+			<tr>
+				<td>Items</td>
+				<td><input type="text" name="pe_items" onblur="prelim_pe(prelim_entry.pe_score.value, prelim_entry.pe_items.value)"></td>
+				<td>Score</td>
+				<td><input type="text" name="pe_score" onblur="prelim_pe(prelim_entry.pe_score.value, prelim_entry.pe_items.value)"></td>
+			</tr>			
+		</table>
+	</form>
+	</div><br>
+
+	<div id="quiz">
+	<form name="prelim_form" action="" method="post">
+		<table align="center">
+			<tr>
+				<th colspan="2">Lecture</th>
+				<th>&nbsp</th>
+				<th colspan="2">Laboratory</th>
+				<th>&nbsp</th>
+				<th colspan="2">Periodic Grade</th>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td>Quiz</td>
+				<td><input type="text" name="Pquiz" disabled></td>
+				<td>&nbsp</td>
+				<td>Machine Prob</td>
+				<td><input type="text" name="Plabquiz" disabled></td>
+				<td>&nbsp</td>
+				<td>Lecture Grade</td>
+				<td><input type="text" name="PLEC_G" disabled></td>
+			</tr>
+			<tr>
+				<td>Class Standing</td>
+				<td><input type="text" name="Pcs" disabled></td>
+				<td>&nbsp</td>
+				<td>Class Standing</td>
+				<td><input type="text" name="Plabcsz" disabled></td>
+				<td>&nbsp</td>
+				<td>Laboratory Grade</td>
+				<td><input type="text" name="PLAB_G" disabled></td>
+			</tr>
+			<tr>
+				<td>Independent Learning</td>
+				<td><input type="text" name="Pil" disabled></td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+				<td>&nbsp</td>
+			</tr>
+			<tr>
+				<td>Written Exam</td>
+				<td><input type="text" name="Plecme" disabled></td>
+				<td>&nbsp</td>
+				<td>Practical Exam</td>
+				<td><input type="text" name="Plabme" disabled></td>
+				<td>&nbsp</td>
+				<td>Prelim Grade</td>
+				<td><input type="text" name="PRELIM_G" disabled></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="midterm"></a>
+<p><a href="" style="text-decoration: none">MIDTERM PERIOD</a></p>
+
+	<table align="center">
+		<tr>
+			<td>USN</td>
+			<td>Lastname</td>
+			<td>Firstname</td>
+			<td>Middlename</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="mid_usn" disabled></td>
+			<td><input type="text" id="mid_last" disabled></td>
+			<td><input type="text" id="mid_first" disabled></td>
+			<td><input type="text" id="mid_mid" disabled></td>
+		</tr>
+	</table>
+
+<nav align="center"><a href="#prelim">PRELIM</a> | <a href="#prefinal">PREFINAL</a> | <a href="#final">FINAL</a> | <a href="">SEM GRADE</a></nav><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="prefinal"></a>
+<p><a href="" style="text-decoration: none">PREFINAL PERIOD</a></p>
+
+	<table align="center">
+		<tr>
+			<td>USN</td>
+			<td>Lastname</td>
+			<td>Firstname</td>
+			<td>Middlename</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="pref_usn" disabled></td>
+			<td><input type="text" id="pref_last" disabled></td>
+			<td><input type="text" id="pref_first" disabled></td>
+			<td><input type="text" id="pref_mid" disabled></td>
+		</tr>
+	</table>
+
+<nav align="center"><a href="#prelim">PRELIM</a> | <a href="#midterm">MIDTERM</a> | <a href="#final">FINAL</a> | <a href="">SEM GRADE</nav><br>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<a name="final"></a>
+<p><a href="" style="text-decoration: none">FINAL PERIOD</a></p>
+
+	<table align="center">
+		<tr>
+			<td>USN</td>
+			<td>Lastname</td>
+			<td>Firstname</td>
+			<td>Middlename</td>
+		</tr>
+		<tr>
+			<td><input type="text" id="fin_usn" disabled></td>
+			<td><input type="text" id="fin_last" disabled></td>
+			<td><input type="text" id="fin_first" disabled></td>
+			<td><input type="text" id="fin_mid" disabled></td>
+		</tr>
+	</table>
+
+<nav align="center"><a href="#prelim">PRELIM</a> | <a href="#midterm">MIDTERM</a> | <a href="#prefinal">PREFINAL</a> | <a href="">SEM GRADE</nav><br>
+
+	<script type="text/javascript">
+		//-------------------------------------------- START OF LECTURE GRADE
+/*		//START OF QUIZ
+		var Pre_QG = 0;
+		Q_count = Number(prompt("How many Quiz did you conduct?"));
+		x = Q_count + 1;
+
+		i = 1; //initialize variable
+		while(i != x){ //condition
+			a = parseFloat(prompt("Enter grade for Q" + i));
+			if (isNaN(a)){
+				alert("Letters and Special Characters are not accepted.");}
+			else if(a < 0 || a > 100){
+				alert("Negative numbers and numbers higher than 100 and invalid.");}
+			else{
+				i++; //iteration
+				Pre_QG += a;}
+		}
+
+		if (Q_count > 1){
+			Pre_QG = (Pre_QG / Q_count).toFixed(2);
+			prelim_form.Pquiz.value = Pre_QG;} //get the average
+		else{
+			prelim_form.Pquiz.value = Pre_QG.toFixed(2);
+		}
+		//END OF QUIZ
+
+		//START OF CLASS STANDING
+		while(true){
+			PLec_CS = Number(prompt("Enter grade for Class Standing"));
+			if (isNaN(PLec_CS)){
+				alert("Invalid score!");
+			}
+			else if(PLec_CS < 0 || PLec_CS > 100){
+				alert("Invalid score!");
+			}
+			else{
+				prelim_form.Pcs.value = PLec_CS.toFixed(2);
+				break;}
+		}//END OF CLASS STANDING
+
+		//START OF INDEPENDENT LEARNING
+		while(true){
+			PLec_IL = Number(prompt("Enter grade for Indepenent Learning"));
+			if (isNaN(PLec_IL)){
+				alert("invalid score");
+			}
+			else if(PLec_IL < 0 || PLec_CS > 100){
+				alert("invalid score");
+			}
+			else{
+				prelim_form.Pil.value = PLec_IL.toFixed(2);
+				break;
+			}
+		}//END OF INDEPENDENT LEARNING
+
+		//START OF MAJOR EXAM
+		Pre_WritExamScore = 0;
+		Pre_WritExamItems = Number(prompt("Enter number of items for written exam."));
+		while(true){
+			Pre_WritExamScore = Number(prompt("Enter score"));
+			if (isNaN(Pre_WritExamScore)){
+				alert("Invalid score!");
+			}
+			else if(Pre_WritExamScore < 0){
+				alert("Invalid score!");
+			}
+			else if (Pre_WritExamScore > Pre_WritExamItems){
+				alert("Invalid score!");
+			}
+			else
+				break;
+		}
+		Pre_Writ_ME = (Pre_WritExamScore / Pre_WritExamItems) * 100;
+		prelim_form.Plecme.value = Pre_Writ_ME.toFixed(2);
+		//END OF MAJOR EXAM
+
+		//START OF LECTURE GRADE
+		Pre_QG = Pre_QG * .3;
+		PLec_CS = PLec_CS * .1;
+		PLec_IL = PLec_IL * .1;
+		Pre_Writ_ME = Pre_Writ_ME *.5;
+		PLECGRADE = Pre_QG + PLec_IL + PLec_CS + Pre_Writ_ME;
+		prelim_form.PLEC_G.value = PLECGRADE.toFixed(2);
+		//END OF LECTURE GRADE
+
+		//-------------------------------------------- START OF LABORATORY GRADE
+		//START OF QUIZ
+		var PreLAB_QG = 0;
+		Q_cnt = Number(prompt("How many Quiz did you conduct?"));
+		y = Q_cnt + 1;
+
+		i = 1; //initialize variable
+		while(i != y){ //condition
+			b = parseFloat(prompt("Enter grade for Q" + i));
+			if (isNaN(b)){
+				alert("Letters and Special Characters are not accepted.");}
+			else if(b < 0 || b > 100){
+				alert("Negative numbers and numbers higher than 100 and invalid.");}
+			else{
+				i++; //iteration
+				PreLAB_QG += b;}
+		}
+
+		if (Q_cnt > 1){
+			PreLAB_QG = (PreLAB_QG / Q_cnt).toFixed(2); //get the average
+			prelim_form.Plabquiz.value = PreLAB_QG;} //get the average
+		else{
+			prelim_form.Plabquiz.value = PreLAB_QG.toFixed(2);
+		}
+		//END OF QUIZ
+
+		//START OF CLASS STANDING
+		while(true){
+			PLab_CS = Number(prompt("Enter grade for Class Standing"));
+			if (isNaN(PLab_CS)){
+				alert("Invalid score!");
+			}
+			else if(PLab_CS < 0 || PLab_CS > 100){
+				alert("Invalid score!");
+			}
+			else
+				prelim_form.Plabcs.value = PLab_CS.toFixed(2);
+				break;
+		}//END OF CLASS STANDING
+
+		//START OF MAJOR EXAM
+		Pre_LabExamScore = 0;
+		Pre_LabExamItems = Number(prompt("Enter number of items for written exam."));
+		while(true){
+			Pre_LabExamScore = Number(prompt("Enter score"));
+			if (isNaN(Pre_LabExamScore)){
+				alert("Invalid score!");
+			}
+			else if(Pre_LabExamScore < 0){
+				alert("Invalid score!");
+			}
+			else if (Pre_LabExamScore > Pre_LabExamItems){
+				alert("Invalid score!");
+			}
+			else
+				break;
+		}
+		Pre_Lab_ME = (Pre_LabExamScore / Pre_LabExamItems) * 100;
+		prelim_form.Plabme.value = Pre_Lab_ME.toFixed(2);
+		//END OF MAJOR EXAM
+
+		//START OF LABORATORY GRADE
+		PreLAB_QG = PreLAB_QG * .4;
+		PLab_CS = PLab_CS * .1;
+		Pre_Lab_ME = Pre_Writ_ME *.5;
+		PLABGRADE = PreLAB_QG + PLec_IL + PLab_CS + Pre_Lab_ME;
+		prelim_form.PLAB_G.value = PLABGRADE.toFixed(2);
+		//END OF LABORATORY GRADE
+
+		//START OF PERIODIC GRACE
+		PRELIM = (PLECGRADE * .6) + (PLABGRADE * .4);
+		prelim_form.PRELIM_G.value = PRELIM.toFixed(2);
+		//END OF PERIODIC GRADE
+*/
+	</script>
+
+</body>
+</html>

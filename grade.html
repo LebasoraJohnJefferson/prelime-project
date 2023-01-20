@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="./js/grade.js" defer></script>
+	<link rel="stylesheet" href="./css/grade.css" type="text/css">
+	<link rel="stylesheet" href="./css/loadingAnimation.css" type="text/css">
+	<title>grade</title>
+</head>
+<body>
+	<header>
+		<li><a href="../html/grade.html">Grade</a></li>
+		<li><a href="../html/Prelim.html">Prelim</a></li>
+		<li><a href="#">Prelim Data Entry</a></li>
+	</header>
+	<main>
+		<div class="start-container">
+			<button class="start" onclick="createHTMLForm()">
+				<h1>Start Calculating Grade</h1>
+			</button>
+		</div>	
+		<div class="form-container">
+			<form id="form">
+				<h3 class="quiz-title">Quizzes:</h3>
+				<div class="input-container">
+					<label><small>Quiz 1:</small></label>
+					<input type="number" name="quiz1" placeholder="Enter grade for quiz 1">
+				</div>
+				<div class="input-container">
+					<label><small>Quiz 2:</small></label>
+					<input type="number" name="quiz2" placeholder="Enter grade for quiz 2">
+				</div>
+				<div class="input-container">
+					<label><small>Quiz 3:</small></label>
+					<input type="number" name="quiz3" placeholder="Enter grade for quiz 3">
+				</div>
+				<div class="next-container">
+					<div class="next-btn" onclick="SumOfQuizzes()">Next</div>
+				</div>
+			</form>
+		</div>
+		<div class="second-form-container">
+			<form id="form2">
+				<h3 class="quiz-title">Others:</h3>
+				<div class="input-container">
+					<label><small>Class Standing:</small></label>
+					<input type="number" name="LEC_CS" placeholder="Enter grade for class standing">
+				</div>
+				<div class="input-container">
+					<label><small>Independent learning:</small></label>
+					<input type="number" name="LEC_IL" placeholder="enter grade for independent learning">
+				</div>
+				<div class="exam-container">
+					<div class="input-exam-container">
+						<label><small>Items:</small></label>
+						<input type="number" name="WE_items" placeholder="How many items is the written exam?">
+					</div>
+					<div  class="input-exam-container">
+						<label><small>Score:</small></label>
+						<input type="number" name="WE_score" placeholder="Enter score of written exam?">
+					</div>
+				</div>
+				<div class="next-container">
+					<div class="next-btn" onclick="Calculate()">Calculate</div>
+				</div>
+			</form>
+		</div>
+		<div id="notification">
+			<div id="context"></div>
+		</div>
+		<div class="center" id="animation">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		  </div>
+	</main>
+</body>
+</html>
