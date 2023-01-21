@@ -71,8 +71,7 @@ main{
     height: 100vh;
     position: fixed;
     top:0; left:0;
-    z-index: -1;
-
+    overflow-y: auto;
 }
 
 .lec-result{
@@ -83,7 +82,6 @@ main{
     width:100%;
     margin-top: 100px;
     height: 80vh;
-    overflow-y: auto;
 }
 
 .lec-result ol{
