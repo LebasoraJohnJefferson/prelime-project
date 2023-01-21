@@ -63,6 +63,54 @@ main{
     max-height: 50vh;
 }
 
+#calResult{
+    display:none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0; left:0;
+    z-index: -1;
+
+}
+
+.lec-result{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    margin-top: 100px;
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.lec-result ol{
+    list-style: none;
+    margin: 10px 13px;
+    color:black;
+    box-shadow: 0px 0px 3px, 10px 10px 15px;
+    width:12rem;
+    height: 15rem;
+    display:grid;
+    border-radius: .3rem;
+}
+
+.lec-result ol h3,
+.lec-result ol li{
+    color:white;
+}
+
+.lec-result ol li span{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
     .input-container{
         display:flex;

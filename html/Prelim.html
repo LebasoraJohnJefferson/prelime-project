@@ -26,11 +26,11 @@
 				<h1>Prelim Calculation</h1>
 			</button>
 		</div>	
-		<div class="form-container">
+		<div class="form-container" id="contentContainer">
 
 			<form class="stepper-form">
 				<div class="step" id="step1">
-					<h2>Quizzes:</h2>
+					<h2>Lecture:</h2>
 					<div class="step1">
 						<div id="add-quizzes">
 							<div class="input-container">
@@ -70,47 +70,135 @@
 				</div>
 				<div class="step" id="step3">
 				  <h2>Laboratory</h2>
-				  <div class="input-container">
-					  <label for="phone">Machine Prob:</label>
-					  <input type="tel" id="phone" name="phone" required>
-				  </div>
-				  <div class="input-container">
-					  <label for="phone">Class Standing:</label>
-					  <input type="tel" id="phone" name="phone" required>
-				  </div>
-				  <div class="input-container">
-					  <label for="phone">Practical Exam:</label>
-					  <input type="tel" id="phone" name="phone" required>
-				  </div>
+				  <div id="add-lab-quizzes">
+					<div class="input-container">
+						<label for="labQuiz0">Quiz 1:</label>
+						<input type="text" type="number" id="labQuiz0" placeholder="Enter score for quiz number 1">
+					</div>
+				</div>
 				  <div class="next-container">
+					<div class="next-btn" onclick="AddLabQuizBtn()">Add Quiz</div>
 					<div class="back-btn" onclick="prevStep(2)">Back</div>
 					<div class="next-btn" onclick="nextStep(4)">Next</div>
 				</div>
 				</div>
 				<div class="step" id="step4">
-					<h2>Periodic Grade</h2>
-					<div class="input-container">
-						<label for="email">Lecture Grade:</label>
-						<input type="email" id="email" name="email" required>
-					</div>
-					<div class="input-container">
-						<label for="email">Laboratory Grade:</label>
-						<input type="email" id="email" name="email" required>
-					</div>
-					<div class="input-container">
-						<label for="email">Prelim Grade:</label>
-						<input type="email" id="email" name="email" required>
-					</div>
+					<h2>Laboratory</h2>
+					<h2>Lecture</h2>
+				  <div class="input-container">
+					  <label for="PLec_CS">Class Standing:</label>
+					  <input type="text" id="lab_PLec_CS" name="PLec_CS" required>
+				  </div>
+				  <div class="input-container">
+					  <label for="Pre_WritExamItems">Written Exam:</label>
+					  <input type="text" id="lab_Pre_WritExamItems" name="Pre_WritExamItems" required>
+				  </div>
+				  <div class="input-container">
+					<label for="Pre_WritExamScore">Enter Score:</label>
+					<input type="text"  id="lab_Pre_WritExamScore" name="Pre_WritExamScore" required>
+				</div>
 					<div class="next-container">
 						<div class="back-btn" onclick="prevStep(3)">Back</div>
-						<div class="next-btn">Submit</div>
+						<div class="next-btn" onclick="result()">Submit</div>
 					</div>
-					
 				</div>
 			</form>
 		</div>
+
+		<div class="center" id="animation">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		  </div>
+
+
 		<div id="notification">
 			<div id="context"></div>
+		</div>
+		<div id="calResult">
+			<div class="result-details-container">
+				<div class="lec-result">
+					<ol>
+						<h3>Lecture</h3>
+						<li>
+							<span>
+								<b>Quiz</b>
+								<span id="Q"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Class Standing</b>
+								<span id="CS"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Independent Learning</b>
+								<span id="IL"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Written Exam</b>
+								<span id="WR"></span>
+							</span>
+						</li>
+					</ol>
+
+					<ol>
+						<h3>Laboratory</h3>
+						<li>
+							<span>
+								<b>Machine Prob</b>
+								<span id="MP"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Class Standing</b>
+								<span id="LCS"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Practical Exam</b>
+								<span id="PE"></span>
+							</span>
+						</li>
+					</ol>
+
+					<ol>
+						<h3>Periodic Grade</h3>
+						<li>
+							<span>
+								<b>Lecture Grade</b>
+								<span id="LG"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Laboratory Grade</b>
+								<span id="LabG"></span>
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>Prelim Grade</b>
+								<span id="PG"></span>
+							</span>
+						</li>
+					</ol>
+					
+				</div>
+			</div>
 		</div>
 	</main>
 </body>
