@@ -1,12 +1,13 @@
 :root{
     --background-color:rgb(41, 45, 48);
     --button-color:rgb(231, 173, 14);
-    --font-family:cursive;
+    --font-family: "san-serif";
     --input-background:rgb(27, 25, 25);
 }
 
 header{
     position: fixed;
+    font-weight: bold;
     top:0; left:0;
     display:flex;
     justify-content: end;
@@ -28,17 +29,21 @@ header li a{
 }
 
 header li a:hover{
-    color:aqua;
+    text-shadow: 0px 0px 5px white,
+                0px 0px 5px white,
+                0px 0px 5px white,
+                0px 0px 5px white;
+    color:rgb(52, 117, 117);
     transition: all .5s;
     transform: translateY(10px);
 }
 
 body{
+    font-family: var(--font-family);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    font-family: var(--font-family);
 }
 
 .start-container{
@@ -50,7 +55,6 @@ body{
 }
 
 .start{
-    font-family: cursive;
     border-radius: .3rem;
     outline:none;
     border:none;
@@ -105,7 +109,9 @@ form .input-container input{
     /* box-shadow: 0px 0px 5px rgba(255,255,255,.3); */
 }
 
+
 .quiz-title{
+    font-size: 1.5rem;
     color:var(--button-color)
 }
 
@@ -115,15 +121,18 @@ form .input-container input{
     justify-content: end;
 }
 
+.back-btn,
 .next-btn{
+    margin: 0px 10px ;
     cursor: pointer;
-    border-radius: 999%;
+    border-radius: .3rem;
     padding: 8px;
     font-weight: bold;
-    background-color: rgb(21, 138, 138);
-    box-shadow:-4px -4px, -6px -6px white;
+    background-color: white;
+    box-shadow:-4px -4px, -7px -7px  rgb(21, 138, 138) ;
 }
 
+.back-btn:hover,
 .next-btn:hover{
     box-shadow: none;
     background-color: aqua;
@@ -148,6 +157,7 @@ form .input-container input{
 }
 
 label{
+    font-size: 1.2rem;
     text-align: center;
     display:flex;
     justify-content: center;
@@ -184,6 +194,9 @@ label{
 
     label{
         width: 100%;
+        justify-content: start;
+        margin: 5px 0px;
+        font-size: 1.3rem;
     }
 
     .exam-container{
@@ -204,4 +217,69 @@ label{
         font-size: 14px;
     }
 }
+
+.congrats-container{
+    display:none;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    top:0; left:0;
+    z-index: 20;
+    background-color: rgba(0,0,0,.7);
+}
+
+.grade-status-container{
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width:20rem;
+    text-align: center;
+    height:10rem;
+    color:white;
+}
+
+.pass{
+    padding: 10px;
+    border-radius: .3rem;
+}
+
+.fail{
+    padding: 10px;
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;  
+    border-radius: .3rem;
+}
+
+.confirm-btn{
+    cursor: pointer;
+    border-radius: .3rem;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: center;
+    background-color: white;
+    color:black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+  
+  
 
