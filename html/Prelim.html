@@ -1,73 +1,113 @@
+</body>
+</html>
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Prelim Grade</title>
-	<script type="text/javascript">
-		function prelim_compute(){
-
-		}
-	</script>
 	<script src="../js/Prelim.js" type="text/javascript" defer></script>
+	<script src="../js/start.js" type="text/javascript" defer></script>
 	<link rel="stylesheet" href="../css/Prelim.css" type="text/css">
+	<link rel="stylesheet" href="../css/similar.css" type="text/css">
+	<link rel="stylesheet" href="../css/loadingAnimation.css" type="text/css">
 </head>
 <body>
-	<h1 align="center">Prelim Period</h1>
+	<img src="../assets/background.gif" id="background-img" alt="background">
+	<header>
+		<li><a href="../index.html">Grade</a></li>
+		<li><a href="../html/Prelim.html">Prelim</a></li>
+		<li><a href="#">Prelim Data Entry</a></li>
+	</header>
+	<main>
+		<div class="start-container">
+			<button class="start" onclick="createHTMLForm()">
+				<h1>Prelim Calculation</h1>
+			</button>
+		</div>	
+		<div class="form-container">
 
-	<div id="quiz">
-	<form name="prelim_form" action="" method="post">
-		<table align="center">
-			<tr>
-				<th colspan="2">Lecture</th>
-				<th>&nbsp</th>
-				<th colspan="2">Laboratory</th>
-				<th>&nbsp</th>
-				<th colspan="2">Periodic Grade</th>
-			</tr>
-			<tr>
-				<td>&nbsp</td>
-			</tr>
-			<tr>
-				<td>Quiz</td>
-				<td><input type="text" name="Pquiz"></td>
-				<td>&nbsp</td>
-				<td>Machine Prob</td>
-				<td><input type="text" name="Plabquiz"></td>
-				<td>&nbsp</td>
-				<td>Lecture Grade</td>
-				<td><input type="text" name="PLEC_G"></td>
-			</tr>
-			<tr>
-				<td>Class Standing</td>
-				<td><input type="text" name="Pcs"></td>
-				<td>&nbsp</td>
-				<td>Class Standing</td>
-				<td><input type="text" name="Plabcs"></td>
-				<td>&nbsp</td>
-				<td>Laboratory Grade</td>
-				<td><input type="text" name="PLAB_G"></td>
-			</tr>
-			<tr>
-				<td>Independent Learning</td>
-				<td><input type="text" name="Pil"></td>
-				<td>&nbsp</td>
-				<td>&nbsp</td>
-				<td>&nbsp</td>
-				<td>&nbsp</td>
-				<td>&nbsp</td>
-			</tr>
-			<tr>
-				<td>Written Exam</td>
-				<td><input type="text" name="Plecme"></td>
-				<td>&nbsp</td>
-				<td>Practical Exam</td>
-				<td><input type="text" name="Plabme"></td>
-				<td>&nbsp</td>
-				<td>Prelim Grade</td>
-				<td><input type="text" name="PRELIM_G"></td>
-			</tr>
-		</table>
-	</form>
-	</div>
-
+			<form class="stepper-form">
+				<div class="step" id="step1">
+					<h2>Quizzes:</h2>
+					<div class="step1">
+						<div id="add-quizzes">
+							<div class="input-container">
+								<label for="quiz1">Quiz 1:</label>
+								<input type="text" type="number" id="quiz0" placeholder="Enter score for quiz number 1">
+							</div>
+						</div>
+					</div>
+					<div class="next-container">
+						<div class="next-btn" onclick="AddQuizBtn()">Add Quiz</div>
+						<div class="next-btn" onclick="nextStep(2)">Next</div>
+					</div>
+				</div>
+				<div class="step" id="step2">
+				  <h2>Lecture</h2>
+				  <div class="input-container">
+					  <label for="name">Class Standing:</label>
+					  <input type="text" id="name" name="name" required>
+				  </div>
+				  <div class="input-container">
+					  <label for="name">Independent Learning:</label>
+					  <input type="text" id="name" name="name" required>
+				  </div>
+				  <div class="input-container">
+					  <label for="name">Written Exam:</label>
+					  <input type="text" id="name" name="name" required>
+				  </div>
+				  
+				  <div class="next-container">
+					<div class="back-btn" onclick="prevStep(1)">Back</div>
+					<div class="next-btn" onclick="nextStep(3)">Next</div>
+				  </div>
+				</div>
+				<div class="step" id="step3">
+				  <h2>Laboratory</h2>
+				  <div class="input-container">
+					  <label for="phone">Machine Prob:</label>
+					  <input type="tel" id="phone" name="phone" required>
+				  </div>
+				  <div class="input-container">
+					  <label for="phone">Class Standing:</label>
+					  <input type="tel" id="phone" name="phone" required>
+				  </div>
+				  <div class="input-container">
+					  <label for="phone">Practical Exam:</label>
+					  <input type="tel" id="phone" name="phone" required>
+				  </div>
+				  <div class="next-container">
+					<div class="back-btn" onclick="prevStep(2)">Back</div>
+					<div class="next-btn" onclick="nextStep(4)">Next</div>
+				</div>
+				</div>
+				<div class="step" id="step4">
+					<h2>Periodic Grade</h2>
+					<div class="input-container">
+						<label for="email">Lecture Grade:</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="input-container">
+						<label for="email">Laboratory Grade:</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="input-container">
+						<label for="email">Prelim Grade:</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="next-container">
+						<div class="back-btn" onclick="prevStep(3)">Back</div>
+						<div class="next-btn">Submit</div>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+		<div id="notification">
+			<div id="context"></div>
+		</div>
+	</main>
 </body>
 </html>

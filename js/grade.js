@@ -1,6 +1,4 @@
 const app = document.getElementById('app')
-const start = document.getElementsByClassName('start-container')
-const form = document.getElementsByClassName('form-container')
 const form2 = document.getElementsByClassName('second-form-container')
 const quizzesInput = document.getElementById('form')
 const otherInput = document.getElementById('form2')
@@ -29,10 +27,6 @@ const back=()=>{
     },2000)
 }
 
-const createHTMLForm =()=>{
-    if(start[0]) start[0].style.display="none"
-    if(form[0]) form[0].style.display = "flex"
-}
 
 const congrats=()=>{
     congratsAnimation.style.display = 'flex'
@@ -82,16 +76,16 @@ const Calculate=()=>{
             WE_items =  Number(data2['WE_items']) == 0 ? 1 : Number(data2['WE_items'])
             LEC_ME = (parseFloat((Number(data2['WE_score']) / WE_items)) * 100) * .5
             LEC_G=parseFloat(LEC_Q + LEC_CS + LEC_IL + LEC_ME).toFixed(2)
-            gradeStatus.classList.remove('pass')
-            gradeStatus.classList.remove('fail')
             if(LEC_G >= 50 && LEC_G <= 100){
                 status = "Your grade is " + LEC_G + "\nyou have a passing grade"
+                gradeStatus.classList.remove('fail')
                 gradeStatus.classList.add('pass')
                 congratsAnimation.style.backgroundImage='url(../assets/congrats.gif)'
                 gradeStatus.style.background = 'green'
             }
             else { 
                 status = "Your grade is " + LEC_G + "\nyou have a failing grade" 
+                gradeStatus.classList.remove('pass')
                 congratsAnimation.style.backgroundImage='none'
                 gradeStatus.classList.add('fail')
                 gradeStatus.style.background = 'red'
