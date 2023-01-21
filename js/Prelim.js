@@ -1,5 +1,5 @@
 const addQuizzes = document.getElementById('add-quizzes')
-let currentStep = 1;
+let currentStep = 1
 let count = 0 
 let quizArray = []
 
@@ -13,41 +13,45 @@ const notify = (msg)=>{
 
 
 const nextStep=(step)=> {
-	console.log(quizArray)
-	document.getElementById(`step${currentStep}`).classList.remove("active");
-	currentStep = step;
-	document.getElementById(`step${currentStep}`).classList.add("active");
+	for(i=0;i<=count;i++){
+		let quiz = document.getElementById(`quiz${i}`)
+		console.log(Number(quiz.value))
+	}
+	if(validateNumber()){
+		document.getElementById(`step${currentStep}`).classList.remove("active")
+		currentStep = step;
+		document.getElementById(`step${currentStep}`).classList.add("active")
+	}else{
+		notify("Input must be positive number or greater than 100!")
+	}
 }
 
 const prevStep=(step)=>{
-  document.getElementById(`step${currentStep}`).classList.remove("active");
+  document.getElementById(`step${currentStep}`).classList.remove("active")
   currentStep = step;
-  document.getElementById(`step${currentStep}`).classList.add("active");
+  document.getElementById(`step${currentStep}`).classList.add("active")
 }
 
-document.getElementById("step1").classList.add("active");
+document.getElementById("step1").classList.add("active")
 
 const AddQuizBtn= ()=>{
-	quizValue = document.getElementById(`quiz${quizArray.length}`)
-	if(quizValue.value.length){
-		quizArray.push(Number(quizValue.value))
-		addQuizzes.innerHTML=''
-		for(i=0;i<quizArray.length;i++){
-			addQuizzes.innerHTML+=`
-			<div class="input-container" id="add-quizzes">
-			<label for="quiz${i}">Quiz ${i+1}:</label>
-			<input type="text" type='number' placeholder='Enter score for quiz number ${i+1}' id="quiz${i}" name="quiz${i}" value="${quizArray[i]}">
-			</div>`
+	count++
+	addQuizzes.innerHTML+=`
+	<div class="input-container" id="add-quizzes">
+	<label for="quiz${count}">Quiz ${count+1}:</label>
+	<input type="text" type='number' placeholder='Enter score for quiz number ${count+1}' id="quiz${count}" name="quiz${count}">
+	</div>`
+}
+
+const validateNumber=()=>{
+	let counter = 0
+	for(i=0;i<=count;i++){
+		let quiz = document.getElementById(`quiz${i}`).value
+		if(Number(quiz)>=0 && Number(quiz)<=100){
+			counter++
 		}
-		addQuizzes.innerHTML+=`
-			<div class="input-container" id="add-quizzes">
-			<label for="quiz${quizArray.length}">Quiz ${quizArray.length+1}:</label>
-			<input type="text" type='number' placeholder='Enter score for quiz number ${quizArray.length+1}' id="quiz${quizArray.length+1}" name="quiz${quizArray.length+1}">
-			</div>`
-		count++
-	}else{
-		notify('make sure to fill all input')
 	}
+	return count+1 == counter
 }
 
 // //-------------------------------------------- START OF LECTURE GRADE
