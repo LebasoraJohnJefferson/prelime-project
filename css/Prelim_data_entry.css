@@ -6,6 +6,14 @@
 }
 
 
+body{
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
 .input-container{
     display:flex;
     margin: 7px 0px;
@@ -59,9 +67,14 @@ li{
 
 
 .studentInfoContainer{
-    box-shadow: -3px 3px 10px, -3px 3px 3px;
+    position: fixed;
+    display: none;
+    bottom:0px;
+    right:0px;
+    z-index: 20;
+    box-shadow: -3px -3px 10px, -3px -3px 3px;
     width:250px;
-    padding:10px 25px;
+    padding:15px 25px;
     margin: 5px;
     border-radius: .3rem;
     background-color: rgb(19, 14, 37);
@@ -90,10 +103,11 @@ li{
 
 .PRELIM-PERIOD{
     display: none;
+    flex-direction: column;
     /* display:flex; */
     width:100vw;
     overflow-x: hidden;
-    margin-top: 50px;
+    margin-top: 20px;
     justify-content: end;
 }
 
@@ -124,6 +138,108 @@ li{
     font-weight: bold;
 }
 
+.form-input-for-prelim{
+    width:100%; height: 100%;
+    display: grid;
+}
+
+
+.form-input-for-prelim ol li:hover{
+    transition: all ease-in-out .5s;
+    background-color: rgb(146, 157, 167);
+    cursor: pointer;
+    border-radius: .3rem;
+    text-align: center;
+}
+
+.form-input-for-prelim ol li{
+    padding: 3px;
+}
+
+.prelim-container-data{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    width:100%; height: 100%;
+    padding-top: 20px;
+    grid-gap: 10px;
+}
+
+
+
+.lect{
+    display: grid;
+    width:100%;
+}
+
+.lect-input-and-label{
+    display:grid;
+}
+
+h3{
+    color:var(--button-color)
+}
+
+label,input,.resut-catcher-container{
+    color:white;
+}
+
+.resut-catcher-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.res-container{
+    margin-top: 10px;
+    display: flex;
+    box-shadow: 1px 1px 11px, 0px 0px 3px;
+    padding: 0px 5px ;
+    flex-direction: column;
+    border-radius: .3rem;
+}
+
+
+.res-container ol li{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width:100%;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+
+#prelim_entry{
+    display:flex;
+    flex-direction: column;
+    padding: 0px 50px;
+    margin: 50px 0px;
+}
+
+.quiz-multi-input{
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+
+input{
+    width:80%;
+    margin: 1.5px 0px;
+    border-radius: .3rem;
+    outline: none;
+    text-indent: 10px;
+    box-shadow: 0px 0px 3px rgb(56, 1, 1);
+    padding: 10px 0px;
+    margin: 3px 0px;
+    color: white;
+    background-color: rgba(0, 0, 0,.7);
+    border: none;
+}
+
+
 @media only screen and (max-width: 768px) {
     .input-container{
         flex-direction: column;
@@ -135,5 +251,13 @@ li{
 
     .PRELIM-PERIOD{
         justify-content: center;
+    }
+
+    .prelim-container-data{
+        grid-template-columns: 1fr;
+    }
+
+    .resut-catcher-container{
+        flex-direction: column;
     }
 }

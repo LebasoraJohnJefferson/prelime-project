@@ -23,7 +23,7 @@
 			<button class="start" onclick="createHTMLForm()">
 				<h1>Prelim DATA Entry</h1>
 			</button>
-		</div> 
+		</div>  
         <div class="form-container" id="student-information-details-container">
             <h3 class="form-title">STUDENT INFORMATION</h3>
             <form class="student-information-input-container" id="student-information">
@@ -49,32 +49,173 @@
 				</div>
             </form>
         </div>
-        <div class="PRELIM-PERIOD" id="PRELIM-PERIOD">
-            <div class="studentInfoContainer">
-                <div class="studentInfoTitle">
-                    <span>
-                        STUDENT INFORMATION
-                    </span>
-                    <span class="dropdown-icon"> > </span>
+        <div class="PRELIM-PERIOD" id="PRELIM-PERIOD" >
+        
+            <div class="grade-form">
+                <div class="prelim-container-data">
+                    <div class="resut-catcher-container">
+                        <div class="res-container">
+                            <h3>LECTURE</h3>
+                            <ol>
+                                <li>
+                                    <p>Quiz</p><div id="totalQuizScore"></div>
+                                </li>
+                                <li>
+                                    <p>Class Standing</p><span id="LecCS"></span>
+                                </li>
+                                <li>
+                                    <p>Independent Learning</p><span id="LecPil"></span>
+                                </li>
+                                <li>
+                                    <p>Written Exam</p><span id="Plecme"></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="res-container">
+                            <h3>Laboratory</h3>
+                            <ol>
+                                
+                                <li>
+                                    <p>Machine Prob</p><span id="Plabquiz"></span>
+                                </li>
+                                <li>
+                                    <p>Class Standing</p><span id="Plabcsz"></span>
+                                </li>
+                                <li>
+                                    <p>Practical Exam</p><span id="Plabme"></span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="res-container">
+                            <h3>Periodic Grade</h3>
+                            <ol>
+                                <li>
+                                    <p>Lecture Grade</p><span id="PLEC_G"></span>
+                                </li>
+                                <li>
+                                    <p>Laboratory Grade</p><span id="PLAB_G"></span>
+                                </li>
+                                <li>
+                                    <p>Prelim Grade</p><span id="PRELIM_G"></spanid>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <form name="prelim_entry" id="prelim_entry" method="POST">
+                        <div class="lect">
+                        <h3>LECTURE</h3>
+                        <div class="lect-input-and-label">
+                            <label>Quiz Grade</label>
+                            <div class="quiz-multi-input">
+                                <Input type="text" id="q1" name="q1" onblur="prelim_quiz()"/>
+                                <Input type="text" id="q2" name="q2" onblur="prelim_quiz()"/>
+                                <Input type="text" id="q3" name="q3" onblur="prelim_quiz()"/>
+                            </div>
+                        </div>
+                        <div class="lect-input-and-label">
+                            <label>Class Standing</label>
+                            <div class="quiz-multi-input">
+                                <Input type="text" id="Ps" name="Ps" onblur="prelim_cs()"/>
+                            </div>
+                        </div>
+                        <div class="lect-input-and-label">
+                            <label>Independent Learning</label>
+                            <div class="quiz-multi-input">
+                                <Input type="text" id="Pil" name="Pil" onblur="prelim_il()" />
+                            </div>
+                        </div>
+                        </div>
+
+                        <div>
+                            <h3>
+                                <h3>Written Exam</h3>
+                                <div>
+                                    <label>Items</label>
+                                    <div class="quiz-multi-input">
+                                        <Input type="text" name="we_items" onblur="prelim_we(prelim_entry.we_score.value, prelim_entry.we_items.value)"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Score</label>
+                                    <div class="quiz-multi-input">
+                                        <input type="text" name="we_score" onblur="prelim_we(prelim_entry.we_score.value, prelim_entry.we_items.value)">
+                                    </div>
+                                </div>
+                            </h3>
+                        </div>
+
+                        <div>
+                            <h3>Laboratory</h3>
+                            <div>
+                                <label>Machine Problem</label>
+                                <div class="quiz-multi-input">
+                                    <input type="text" name="m1" onblur="prelim_LAB_quiz()">
+                                    <input type="text" name="m2" onblur="prelim_LAB_quiz()">
+                                    <input type="text" name="m3" onblur="prelim_LAB_quiz()">
+                                </div>
+                            </div>
+                            <div>
+                                <label>Class Standing</label>
+                                <div class="quiz-multi-input">
+                                    <input type="text" name="Plabcs" onblur="prelim_lab_cs()">
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Practical Exam</h3>
+                                <div>
+                                    <label>Items</label>
+                                    <div class="quiz-multi-input">
+                                        <Input type="text" name="PE_items" onblur="pre_PE()"/>
+                                    </div>
+                                    <label >Score</label>
+                                    <div class="quiz-multi-input">
+                                        <Input type="text" name="PE_score" onblur="pre_PE()" />
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </form>
+
                 </div>
-                <ol class="studentData">
-                    <li >
-                        <span>Username:</span><span id="student-USN">John.</span>
-                    </li>
-                    <li >
-                        <span>Last Name:</span><span id="student-Lname">JOHN</span>
-                    </li>
-                    <li >
-                        <span>First Name:</span><span id="student-Fname">JOHN</span>
-                    </li>
-                    <li >
-                        <span>Middle Name:</span><span id="student-Mname">JOHN</span>
-                    </li>
-                </ol>
             </div>
+            
         </div>
     </main>
 
+
+    <div class="studentInfoContainer" id="studentInfoContainer">
+        <div class="studentInfoTitle">
+            <span>
+                STUDENT INFORMATION
+            </span>
+            <span class="dropdown-icon"> > </span>
+        </div>
+        <ol class="studentData">
+            <li >
+                <span>Username:</span><span id="student-USN">John.</span>
+            </li>
+            <li >
+                <span>Last Name:</span><span id="student-Lname">JOHN</span>
+            </li>
+            <li >
+                <span>First Name:</span><span id="student-Fname">JOHN</span>
+            </li>
+            <li >
+                <span>Middle Name:</span><span id="student-Mname">JOHN</span>
+            </li>
+        </ol>
+        <div class="studentData">
+            <div class="form-input-for-prelim">
+                <ol class="nav-menu">
+                    <li onclick="show('prelim')">PRELIM</li>
+                    <li onclick="show('mid')">MIDTERM</li>
+                    <li onclick="show('pre')">PREFINAL</li>
+                    <li onclick="show('final')">FINAL</li>
+                    <li oncanplay="show('sem')">SEM GRADE</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 
 
 
