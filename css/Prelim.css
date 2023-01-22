@@ -68,10 +68,10 @@ main{
     justify-content: center;
     align-items: center;
     width: 100vw;
+    margin-top: 50px;
     height: 100vh;
     position: fixed;
     top:0; left:0;
-    overflow-y: auto;
 }
 
 .lec-result{
@@ -80,8 +80,8 @@ main{
     align-items: center;
     justify-content: space-around;
     width:100%;
-    margin-top: 100px;
-    height: 80vh;
+    height: 95vh;
+    overflow-y: auto;
 }
 
 .lec-result ol{
@@ -93,6 +93,7 @@ main{
     height: 15rem;
     display:grid;
     border-radius: .3rem;
+    opacity: 9;
 }
 
 .lec-result ol h3,

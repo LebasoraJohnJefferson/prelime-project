@@ -92,10 +92,10 @@
 
 //=============================================== LABORATORY
 		function passvalue(){
-			//document.getElementById("usn").innerHTML = studinfo.stud_usn.value;
-			//document.getElementById("last").innerHTML = studinfo.stud_last.value;
-			//document.getElementById("first").innerHTML = studinfo.stud_first.value;
-			//document.getElementById("mid").innerHTML = studinfo.stud_mid.value;
+			// document.getElementById("usn").innerHTML = studinfo.stud_usn.value;
+			// document.getElementById("last").innerHTML = studinfo.stud_last.value;
+			// document.getElementById("first").innerHTML = studinfo.stud_first.value;
+			// document.getElementById("mid").innerHTML = studinfo.stud_mid.value;
 			pre_usn.value = studinfo.stud_usn.value;
 			pre_last.value = studinfo.stud_last.value;
 			pre_first.value = studinfo.stud_first.value;
@@ -177,46 +177,6 @@
 			text-decoration: none;
 			font-family: arial;
 		}
-
-		/*.button {
-		  display: inline-block;
-		  border-radius: 4px;
-		  background-color: #f4511e;
-		  border: none;
-		  color: #FFFFFF;
-		  text-align: center;
-		  font-size: 28px;
-		  padding: 20px;
-		  width: 200px;
-		  transition: all 0.5s;
-		  cursor: pointer;
-		  margin: 5px;
-		}
-
-		.button span {
-		  cursor: pointer;
-		  display: inline-block;
-		  position: relative;
-		  transition: 0.5s;
-		}
-
-		.button span:after {
-		  content: '\00bb';
-		  position: absolute;
-		  opacity: 0;
-		  top: 0;
-		  right: -20px;
-		  transition: 0.5s;
-		}
-
-		.button:hover span {
-		  padding-right: 25px;
-		}
-
-		.button:hover span:after {
-		  opacity: 1;
-		  right: 0;
-		}*/
 
 	</style>
 </head>
@@ -455,7 +415,7 @@
 
 	<script type="text/javascript">
 		//-------------------------------------------- START OF LECTURE GRADE
-/*		//START OF QUIZ
+		//START OF QUIZ
 		var Pre_QG = 0;
 		Q_count = Number(prompt("How many Quiz did you conduct?"));
 		x = Q_count + 1;
@@ -488,6 +448,7 @@
 			}
 			else if(PLec_CS < 0 || PLec_CS > 100){
 				alert("Invalid score!");
+
 			}
 			else{
 				prelim_form.Pcs.value = PLec_CS.toFixed(2);
@@ -612,7 +573,7 @@
 		PRELIM = (PLECGRADE * .6) + (PLABGRADE * .4);
 		prelim_form.PRELIM_G.value = PRELIM.toFixed(2);
 		//END OF PERIODIC GRADE
-*/
+
 	</script>
 
 </body>

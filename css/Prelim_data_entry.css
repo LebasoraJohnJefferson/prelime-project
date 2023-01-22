@@ -1,0 +1,130 @@
+:root{
+    --background-color:rgb(41, 45, 48);
+    --button-color:rgb(231, 173, 14);
+    --font-family: "san-serif";
+    --input-background:rgb(27, 25, 25);
+}
+
+
+.input-container{
+    display:flex;
+    margin: 7px 0px;
+    padding: 0px 10px;
+  }
+
+  .input-container input{
+    background-color: var(--input-background);
+    color:white;
+    font-size: 1rem;
+    width:100%;
+    padding: 10px;
+    border-radius: .3rem;
+    outline:none;
+    border:none;
+    /* box-shadow: 0px 0px 5px rgba(255,255,255,.3); */
+}
+
+.form-title{
+    color:var(--button-color);
+    font-size: 1.3rem;
+}
+
+.input-container label{
+    color:white;
+    width: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-container{
+    width:100vw;
+    height: 100vh;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.student-information-input-container{
+    width: 80%;
+    display:grid;
+}
+
+li{
+    list-style: none;
+}
+
+
+.studentInfoContainer{
+    box-shadow: -3px 3px 10px, -3px 3px 3px;
+    width:250px;
+    padding:10px 25px;
+    margin: 5px;
+    border-radius: .3rem;
+    background-color: rgb(19, 14, 37);
+    color:white;
+}
+
+.studentInfoContainer:hover > .studentData{
+    display: inline-block;
+}
+
+
+.dropdown-icon{
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family:cursive;
+}
+
+.studentInfoContainer:hover .studentInfoTitle > .dropdown-icon{
+    display: inline-block;
+    -webkit-transform: rotate(90deg)  translateY(-5px);
+    -moz-transform: rotate(90deg)  translateY(-5px);
+    -o-transform: rotate(90deg)  translateY(-5px); 
+    transform: rotate(90deg)  translateY(-5px);
+}
+
+
+.PRELIM-PERIOD{
+    display: none;
+    /* display:flex; */
+    width:100vw;
+    overflow-x: hidden;
+    margin-top: 50px;
+    justify-content: end;
+}
+
+.studentData li{
+    display: grid;
+    width:100%;
+    grid-template-columns: 1fr 1fr;
+}
+
+.studentData{
+    display: none;
+    width:100%;
+}
+
+#student-USN,
+#student-Lname,
+#student-Fname,
+#student-Mname{
+    width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.studentInfoTitle{
+    color:var(--button-color);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .input-container{
+        flex-direction: column;
+    }
+}

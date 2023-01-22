@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/start.js" type="text/javascript" defer></script>
+    <script src="../js/Prelim_data_entry.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="../css/similar.css" type="text/css">
+	<link rel="stylesheet" href="../css/loadingAnimation.css" type="text/css">
+	<link rel="stylesheet" href="../css/Prelim_data_entry.css" type="text/css">
+    <title>Prelim Data Entry</title>
+</head>
+<body>
+    <img src="../assets/background.gif" id="background-img" alt="background">
+	<header>
+		<li><a href="../index.html">Grade</a></li>
+		<li><a href="../html/Prelim.html">Prelim</a></li>
+		<li><a href="./Prelim_data_entry.html">Prelim Data Entry</a></li>
+	</header>
+    <main>
+        <div class="start-container">
+			<button class="start" onclick="createHTMLForm()">
+				<h1>Prelim DATA Entry</h1>
+			</button>
+		</div> 
+        <div class="form-container" id="student-information-details-container">
+            <h3 class="form-title">STUDENT INFORMATION</h3>
+            <form class="student-information-input-container" id="student-information">
+                <div class="input-container">
+                    <label for="quiz1">USN:</label>
+                    <input type="text" type="number" id="USN" name="USN" placeholder="Enter User name...">
+                </div>
+                <div class="input-container">
+                    <label for="quiz1">Lastname:</label>
+                    <input type="text" type="number" id="Lname" name="Lname" placeholder="Enter Last name...">
+                </div>
+                <div class="input-container">
+                    <label for="quiz1">Firstname:</label>
+                    <input type="text" type="number" id="Fname" name="Fname" placeholder="Enter First name...">
+                </div>
+                <div class="input-container">
+                    <label for="quiz1">Middlename:</label>
+                    <input type="text" type="number" id="Mname" name="Mname" placeholder="Enter Middle Name...">
+                </div>
+                <div class="next-container">
+					<div class="back-btn" onclick="Reset()">Reset</div>
+					<div class="next-btn" onclick="Save(4)">Save</div>
+				</div>
+            </form>
+        </div>
+        <div class="PRELIM-PERIOD" id="PRELIM-PERIOD">
+            <div class="studentInfoContainer">
+                <div class="studentInfoTitle">
+                    <span>
+                        STUDENT INFORMATION
+                    </span>
+                    <span class="dropdown-icon"> > </span>
+                </div>
+                <ol class="studentData">
+                    <li >
+                        <span>Username:</span><span id="student-USN">John.</span>
+                    </li>
+                    <li >
+                        <span>Last Name:</span><span id="student-Lname">JOHN</span>
+                    </li>
+                    <li >
+                        <span>First Name:</span><span id="student-Fname">JOHN</span>
+                    </li>
+                    <li >
+                        <span>Middle Name:</span><span id="student-Mname">JOHN</span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <div id="notification">
+        <div id="context"></div>
+    </div>
+    <div class="center" id="animation">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    
+</body>
+</html>
