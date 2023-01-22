@@ -27,6 +27,7 @@
 .form-title{
     color:var(--button-color);
     font-size: 1.3rem;
+    text-align: center;
 }
 
 .input-container label{
@@ -130,5 +131,9 @@ li{
 
     .start h1{
         font-size: 14px;
+    }
+
+    .PRELIM-PERIOD{
+        justify-content: center;
     }
 }
