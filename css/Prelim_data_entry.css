@@ -127,4 +127,8 @@ li{
     .input-container{
         flex-direction: column;
     }
+
+    .start h1{
+        font-size: 14px;
+    }
 }
