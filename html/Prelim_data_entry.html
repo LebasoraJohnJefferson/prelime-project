@@ -19,7 +19,7 @@
 		<li><a href="./Prelim_data_entry.html">Prelim Data Entry</a></li>
 	</header>
     <main>
-        <div class="start-container">
+        <!-- <div class="start-container">
 			<button class="start" onclick="createHTMLForm()">
 				<h1>Prelim DATA Entry</h1>
 			</button>
@@ -48,11 +48,12 @@
 					<div class="next-btn" onclick="Save(4)">Save</div>
 				</div>
             </form>
-        </div>
-        <div class="PRELIM-PERIOD" id="PRELIM-PERIOD" >
+        </div> -->
+        <div class="PRELIM-PERIOD" id="PRELIM-PERIOD" style="display:flex">
         
             <div class="grade-form">
-                <div class="prelim-container-data">
+                <div class="prelim-container-data" id="top">
+                    <h1 id="field">PRELIM</h1>
                     <div class="resut-catcher-container">
                         <div class="res-container">
                             <h3>LECTURE</h3>
@@ -174,6 +175,9 @@
                                 </div>
                             </div>
                             </div>
+                            <div class="next-container" style="justify-content:start">
+                                <a href="#top" class="back-btn" >Top Page</a>
+                            </div>
                     </form>
 
                 </div>
@@ -183,7 +187,7 @@
     </main>
 
 
-    <div class="studentInfoContainer" id="studentInfoContainer">
+    <div class="studentInfoContainer" id="studentInfoContainer" style="display:grid">
         <div class="studentInfoTitle">
             <span>
                 STUDENT INFORMATION
@@ -207,11 +211,11 @@
         <div class="studentData">
             <div class="form-input-for-prelim">
                 <ol class="nav-menu">
-                    <li onclick="show('prelim')">PRELIM</li>
-                    <li onclick="show('mid')">MIDTERM</li>
-                    <li onclick="show('pre')">PREFINAL</li>
-                    <li onclick="show('final')">FINAL</li>
-                    <li oncanplay="show('sem')">SEM GRADE</li>
+                    <li onclick="show('PRELIM')">PRELIM</li>
+                    <li onclick="show('MIDTERM')">MIDTERM</li>
+                    <li onclick="show('PREFINAL')">PREFINAL</li>
+                    <li onclick="show('FINAL')">FINAL</li>
+                    <li onclick="show('SEMGRADE')">SEMGRADE</li>
                 </ol>
             </div>
         </div>
